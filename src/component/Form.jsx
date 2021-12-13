@@ -35,13 +35,22 @@ export const Form = () => {
   return (
     <div className="form">
       <div className="form-container">
+        <h5>Multi Step Registration</h5>
         <div className="header">
           <h1>{FormTitles[page]}</h1>
         </div>
         <div className="body">{PageShow()}</div>
         <div className="footer">
+          <button
+            disabled={page == 0}
+            onClick={() => {
+              setPage((currPage) => currPage - 1);
+            }}
+          >
+            Prev
+          </button>
           <button onClick={page === 3 ? alert("Successfully Submit") : goNext}>
-            {page === 3 ? "Successfully Submit " : "Submit"}
+            {page === 3 ? "Successfully Submit " : "Next"}
           </button>
         </div>
       </div>
